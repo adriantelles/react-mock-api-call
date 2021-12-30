@@ -1,46 +1,46 @@
-# Getting Started with Create React App
+Write a simple JavaScript application which does the following in any framework or JS libraries (NodeJS, Angular, React, Vue) of your choice. You can use a local file / dyson / fakejson / any of your choice to mock the rest calls. The application has to fetch data from 2 different rest API services.
+Both the APIs return id, firstName, lastName in an array format. 
+One of the API - API1 returns JSON and takes 5 seconds to return the response.
+Another API2 returns XML and takes takes 10 seconds.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Once the response comes back, the data needs to be merged from both the APIs and sorted based on id. Both the APIs are independent and there is no order in calling the APIs. The code that you implement should be modular, should follow good coding practices, should be optimally designed and should be performance effective.
 
-## Available Scripts
+JSON return:
+{
+    "person": [
+        {
+            "id": 10,
+            "firstName": "John",
+            "lastName": "Doe"
+        },
+        {
+            "id": 5,
+            "firstName": "Jack",
+            "lastName": "Doe"
+        },
+        {
+            "id": 7,
+            "firstName": "James",
+            "lastName": "Doe"
+        }
+    ]
+}
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+XML return:
+<persons>
+    <person>
+        <id>3 < /id>
+        < firstName > Jen < /firstName>
+        < lastName > Doe < /lastName>
+    < /person>
+    < person >
+        <id>6 < /id>
+        < firstName > Stephanie < /firstName>
+        < lastName > Joe < /lastName>
+    < /person>
+    < person >
+        <id>1 < /id>
+        < firstName > Victoria < /firstName>
+        < lastName > Doe < /lastName>
+    < /person>
+< /persons>
